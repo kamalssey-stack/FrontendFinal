@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pustok — Слайдер и Меню на Bootstrap</title>
+
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --g: #62a700;
+      --gd: #4d8700;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f8f9fa;
+    }
+
+
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      min-height: 80px;
+    }
+
+    .navbar-brand {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--g) !important;
+      letter-spacing: -1px;
+    }
+
+    .nav-link {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333 !important;
+      text-transform: uppercase;
+      padding: 10px 16px !important;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--g) !important;
+    }
+
+    .dropdown-menu {
+      border: 1px solid #ebebeb;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      padding: 10px 0;
+    }
+
+    .dropdown-item {
+      font-size: 14px;
+      color: #555;
+      padding: 8px 20px;
+      transition: all 0.2s;
+    }
+
+    .dropdown-item:hover {
+      background: #f8f9fa;
+      color: var(--g);
+      padding-left: 24px;
+    }
+
+    .has-megamenu {
+      position: static !important;
+    }
+
+    .megamenu {
+      position: absolute;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: 90%;
+      max-width: 700px;
+      padding: 25px !important;
+    }
+
+    .megamenu h6 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+      color: #222;
+      border-bottom: 2px solid var(--g);
+      padding-bottom: 6px;
+      display: inline-block;
+    }
+
+
+    .hero-carousel {
+      background: #eee;
+      overflow: hidden;
+      min-height: 480px;
+    }
+
+    .carousel-item {
+      min-height: 480px;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      border: 2px solid var(--g);
+      color: var(--gd);
+      font-weight: 600;
+      padding: 12px 32px;
+      border-radius: 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .btn-custom:hover {
+      background: var(--g);
+      color: #fff;
+    }
+
+    .book-img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+    }
+
+    /* Стрелки карусели */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.8;
+      color: #222;
+    }
+
+    .carousel-control-prev {
+      left: 20px;
+    }
+
+    .carousel-control-next {
+      right: 20px;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: var(--g);
+      color: #fff;
+      opacity: 1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1);
+    }
+
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+      filter: invert(0);
+    }
+
+    /* Индикаторы (точки) */
+    .carousel-indicators [data-bs-target] {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--g);
+      opacity: 0.4;
+      margin: 0 5px;
+    }
+
+    .carousel-indicators .active {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Pustok.</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pustokNav" aria-controls="pustokNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="pustokNav">
+        <ul class="navbar-nav gap-2">
+          
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">HOME</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              SHOP
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="shop.html">Shop Grid</a></li>
+              <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+              <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+              <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
+            </ul>
+          </li>
+
+          <!-- Выпадающее меню PAGES из скриншота -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              PAGES
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+              <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+              <li><a class="dropdown-item" href="compare.html">Compare</a></li>
+              <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
+              <li><a class="dropdown-item" href="login.html">Login Register</a></li>
+              <li><a class="dropdown-item" href="my-account.html">My Account</a></li>
+              <li><a class="dropdown-item" href="order-complete.html">Order Complete</a></li>
+              <li><a class="dropdown-item" href="faq.html">Faq</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact 02</a></li>
+            </ul>
+          </li>
+
+  
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              BLOG
+            </a>
+            <div class="dropdown-menu megamenu shadow">
+              <div class="row">
+                <div class="col-md-4 border-end">
+                  <h6>Blog Grid</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="blog-grid.html">Full Width (Default)</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-grid-left.html">Left Sidebar</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-grid-right.html">Right Sidebar</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 border-end">
+                  <h6>Blog List</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="blog-list-left.html">Left Sidebar</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-list-right.html">Right Sidebar</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <h6>Blog Details</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="blog-details-image.html">Image Format (Default)</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-gallery.html">Gallery Format</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-details-audio.html">Audio Format</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-details-video.html">Video Format</a></li>
+                    <li><a class="dropdown-item px-0" href="blog-details-left.html">Left Sidebar</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="pustokHeroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+    
+ 
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#pustokHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+      <button type="button" data-bs-target="#pustokHeroCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+    </div>
+
+    <div class="carousel-inner container">
+
+      <div class="carousel-item active">
+        <div class="row align-items-center py-5 min-vh-50">
+          <div class="col-lg-6 hero-text">
+            <h1>Артур Конан Дойл<br>Затерянный мир</h1>
+            <p>Экспедиция в мир, где время остановилось</p>
+            <a href="product.html?id=2" class="btn btn-custom">$78.09 — Заказать!</a>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center gap-3">
+            <img src="assets/image/products/product-1.jpg" class="book-img" alt="Книга 1">
+            <img src="assets/image/products/product-2.jpg" class="book-img mt-4" alt="Книга 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Слайд 2 -->
+      <div class="carousel-item">
+        <div class="row align-items-center py-5 min-vh-50">
+          <div class="col-lg-6 hero-text">
+            <h1>Герберт Уэллс<br>Машина времени</h1>
+            <p>Путешествие сквозь века и тайны человечества</p>
+            <a href="product.html?id=5" class="btn btn-custom">$64.50 — Подробнее</a>
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center gap-3">
+            <img src="assets/image/products/product-3.jpg" class="book-img" alt="Книга 3">
+            <img src="assets/image/products/product-4.jpg" class="book-img mt-4" alt="Книга 4">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#pustokHeroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Предыдущий</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#pustokHeroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Следующий</span>
+    </button>
+
+  </div>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

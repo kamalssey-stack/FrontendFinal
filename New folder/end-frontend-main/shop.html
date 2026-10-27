@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Книги — Pustok</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body data-page="shop">
+<div id="site-header"></div>
+<section class="titlebar"><div class="wrap"><h1>Книги</h1><p><a href="index.html">Главная</a> / Книги</p></div></section>
+<section class="wrap">
+  <div class="toolbar">
+    <div class="chips" id="chips"></div>
+    <div class="tb-right">
+      <div class="price-filter">
+        <label>До: <b id="pVal">$100</b></label>
+        <input type="range" id="pRange" min="5" max="100" value="100" step="1">
+      </div>
+      <span id="count"></span>
+      <select id="sort"><option value="def">По умолчанию</option><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option><option value="name">По названию</option></select>
+      <button id="vGrid" class="on" title="Галерея"><i class="fas fa-th"></i></button><button id="vList" title="Список"><i class="fas fa-list"></i></button>
+    </div>
+  </div>
+  <div class="grid gal" id="catalog"></div>
+</section>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

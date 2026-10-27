@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оформление заказа — Pustok</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body data-page="checkout">
+<div id="site-header"></div>
+
+<section class="titlebar">
+  <div class="wrap">
+    <h1>Оформление заказа</h1>
+    <p><a href="index.html">Главная</a> / <a href="shop.html">Книги</a> / Оформление заказа</p>
+  </div>
+</section>
+
+<section class="wrap sec-space">
+  <div class="checkout-layout" id="checkoutLayout">
+    <div class="checkout-form-box">
+      <h2>Данные доставки</h2>
+      <form id="orderForm" class="checkout-form">
+        <div class="form-row">
+          <label>Ваше имя *<input type="text" name="name" required placeholder="Иван Иванов"></label>
+          <label>Номер телефона *<input type="tel" name="phone" required placeholder="+994 (50) 123-45-67"></label>
+        </div>
+        <div class="form-row">
+          <label>Email *<input type="email" name="email" required placeholder="example@mail.com"></label>
+          <label>Город доставки *<input type="text" name="city" required placeholder="Баку"></label>
+        </div>
+        <label>Адрес (улица, дом, квартира) *<input type="text" name="address" required placeholder="ул. Низами, д. 10, кв. 5"></label>
+        <label>Примечания к заказу<textarea name="comment" rows="3" placeholder="Удобное время доставки, код домофона..."></textarea></label>
+
+        <h3 class="pay-title">Способ оплаты</h3>
+        <div class="pay-methods">
+          <label class="pay-option">
+            <input type="radio" name="payment" value="cash" checked>
+            <span><i class="fas fa-money-bill-wave"></i> Оплата при получении (наличные/курьеру)</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="payment" value="card">
+            <span><i class="fas fa-credit-card"></i> Банковской картой онлайн (Visa / Mastercard)</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-o solid btn-order" id="submitOrderBtn">Подтвердить заказ</button>
+      </form>
+    </div>
+
+    <div class="checkout-summary-box">
+      <h2>Ваш заказ</h2>
+      <div class="order-items-list" id="orderItems"></div>
+      <div class="order-totals">
+        <div class="ot-row"><span>Товары:</span><b id="otSubtotal">$0.00</b></div>
+        <div class="ot-row"><span>Доставка:</span><span class="free-badge">Бесплатно</span></div>
+        <div class="ot-row ot-total"><span>Итого к оплате:</span><b id="otTotal">$0.00</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-success-box hide" id="orderSuccess">
+    <i class="fas fa-check-circle success-icon"></i>
+    <h2>Спасибо за ваш заказ!</h2>
+    <p>Номер вашего заказа: <b id="orderNum">#PUSTOK-0000</b></p>
+    <p>Мы свяжемся с вами в ближайшее время для подтверждения доставки.</p>
+    <a href="index.html" class="btn-o solid">Вернуться на главную</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

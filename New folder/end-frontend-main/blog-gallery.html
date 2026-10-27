@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog Details — Pustok</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body data-page="blog">
+<div id="site-header"></div>
+
+<!-- Хлебные крошки как на макете -->
+<section class="titlebar">
+  <div class="wrap">
+    <h1>Blog Details</h1>
+    <p><a href="index.html">Home</a> / Blog Details</p>
+  </div>
+</section>
+
+<!-- Основной контент блога с галереей и сайдбаром -->
+<main class="wrap blog-details-section">
+  <div class="blog-container">
+
+    <!-- Левая колонка: Статья и Галерея -->
+    <article class="blog-main">
+      <div class="blog-gallery-slider">
+        <img id="mainGalleryImg" src="assets/image/others/blog-img-big-1.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-img-big-1.jpg'" alt="Blog Gallery" class="main-img">
+      </div>
+
+      <!-- Мини-галерея (переключение картинок кликом) -->
+      <div class="gallery-thumbs" id="galleryThumbs">
+        <img src="assets/image/others/blog-img-big-1.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-img-big-1.jpg'" class="gallery-thumb active" alt="Thumb 1">
+        <img src="assets/image/others/blog-grid-1.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-1.jpg'" class="gallery-thumb" alt="Thumb 2">
+        <img src="assets/image/others/blog-grid-2.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-2.jpg'" class="gallery-thumb" alt="Thumb 3">
+        <img src="assets/image/others/blog-grid-3.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-3.jpg'" class="gallery-thumb" alt="Thumb 4">
+        <img src="assets/image/others/blog-grid-4.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-4.jpg'" class="gallery-thumb" alt="Thumb 5">
+      </div>
+
+      <header class="blog-post-header">
+        <h1>How to Water and Care for Mounted Books & Collections</h1>
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar-alt"></i> August 13, 2026</span>
+          <span><i class="fas fa-user"></i> Post by <b>Hastech</b></span>
+          <span><i class="fas fa-comments"></i> 3 Comments</span>
+          <span><i class="fas fa-folder-open"></i> Life Style, Books</span>
+        </div>
+      </header>
+
+      <div class="blog-body">
+        <p>Virtual reality and 3-D technology are already well-established in the entertainment and design industries. As digital mediums continue to expand, physical books remain timeless artifacts that connect readers with history, art, and intellectual heritage.</p>
+
+        <p>Proper preservation of hardcover collections and vintage editions requires thoughtful humidity control, mindful shelf organization, and gentle handling. Discovering the balance between showcasing your personal library and protecting rare prints is an art every collector learns over time.</p>
+
+        <blockquote>
+          «A reader lives a thousand lives before he dies. The man who never reads lives only one.» — George R.R. Martin
+        </blockquote>
+
+        <p>Typography and bookbinding methods have evolved rapidly from traditional letterpress methods to modern archival binding. When selecting editions for your curated shelf, pay special attention to paper density, acid-free pulp, and sewn signatures rather than glued bindings for lasting durability.</p>
+
+        <div class="blog-tags-share">
+          <div class="tag-cloud">
+            <span style="font-weight:600;color:#333;margin-right:5px;">Tags:</span>
+            <a href="shop.html">Books</a>
+            <a href="shop.html">Reading</a>
+            <a href="shop.html">Literature</a>
+            <a href="shop.html">Library</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Правая колонка: Сайдбар (по скриншоту Envato/ThemeForest) -->
+    <aside class="blog-sidebar">
+
+      <!-- Поиск -->
+      <div class="sidebar-widget">
+        <div class="sidebar-badge">Search</div>
+        <form class="sidebar-search-box" onsubmit="event.preventDefault(); location.href='shop.html?q=' + encodeURIComponent(this.querySelector('input').value);">
+          <input type="text" placeholder="Search" required>
+          <button type="submit" aria-label="Искать"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Архивы блога -->
+      <div class="sidebar-widget">
+        <div class="sidebar-badge">BLOG ARCHIVES</div>
+        <ul class="archive-list">
+          <li><a href="blog-gallery.html">March 2015 (1)</a></li>
+          <li><a href="blog-gallery.html">December 2014 (3)</a></li>
+          <li><a href="blog-gallery.html">November 2014 (4)</a></li>
+          <li><a href="blog-gallery.html">September 2014 (1)</a></li>
+          <li><a href="blog-gallery.html">August 2014 (1)</a></li>
+        </ul>
+      </div>
+
+      <!-- Свежие статьи -->
+      <div class="sidebar-widget">
+        <div class="sidebar-badge">RECENT POSTS</div>
+        <div class="recent-post-item">
+          <img src="assets/image/others/blog-grid-1.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-1.jpg'" alt="Post 1">
+          <div class="recent-post-info">
+            <h4><a href="blog-gallery.html">How to Water and Care for Mounted</a></h4>
+            <span>AUG 13, 2026</span>
+          </div>
+        </div>
+        <div class="recent-post-item">
+          <img src="assets/image/others/blog-grid-2.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-2.jpg'" alt="Post 2">
+          <div class="recent-post-info">
+            <h4><a href="blog-gallery.html">Why You Never See BLOG TITLE That</a></h4>
+            <span>JAN 19, 2026</span>
+          </div>
+        </div>
+        <div class="recent-post-item">
+          <img src="assets/image/others/blog-grid-3.jpg" onerror="this.onerror=null;this.src='assets/image/others/blog-grid-3.jpg'" alt="Post 3">
+          <div class="recent-post-info">
+            <h4><a href="blog-gallery.html">What Everyone Must Know About Books</a></h4>
+            <span>AUG 31, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Популярные теги -->
+      <div class="sidebar-widget">
+        <div class="sidebar-badge">TAGS</div>
+        <div class="tag-cloud">
+          <a href="shop.html">Novel</a>
+          <a href="shop.html">Drama</a>
+          <a href="shop.html">Classic</a>
+          <a href="shop.html">Poetry</a>
+          <a href="shop.html">Adventure</a>
+          <a href="shop.html">Art & Photo</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Интерактивное переключение фото в галерее -->
+<script>
+  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    thumb.addEventListener('click', function() {
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const mainImg = document.getElementById('mainGalleryImg');
+      mainImg.style.opacity = '0.4';
+      setTimeout(() => {
+        mainImg.src = this.src;
+        mainImg.style.opacity = '1';
+      }, 150);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pustok — книжный магазин</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Alex+Brush&display=swap" rel="stylesheet">
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+
+<section class="hero-slider-wrap" id="heroSliderWrap">
+  <div class="hero-slides">
+    <div class="hero-slide active">
+      <div class="wrap hero-in">
+        <div class="hero-text">
+          <h1>Артур Конан Дойл<br>Затерянный мир</h1>
+          <p>Экспедиция в мир, где время остановилось</p>
+          <a class="btn-o" href="product.html?id=2">$78.09 — Заказать!</a>
+        </div>
+        <div class="hero-books">
+          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop" alt="Книга">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop" alt="Книга">
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <div class="wrap hero-in">
+        <div class="hero-text">
+          <h1>Герберт Уэллс<br>Машина времени</h1>
+          <p>Путешествие сквозь века и тайны человечества</p>
+          <a class="btn-o" href="product.html?id=5">$64.50 — Подробнее</a>
+        </div>
+        <div class="hero-books">
+          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400&h=600&fit=crop" alt="Книга 2">
+          <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=400&h=600&fit=crop" alt="Книга 3">
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero-ctrl hero-prev" id="heroPrev" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+  <button class="hero-ctrl hero-next" id="heroNext" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+  <div class="hero-dots" id="heroDots">
+    <span class="hero-dot active"></span>
+    <span class="hero-dot"></span>
+  </div>
+</section>
+
+
+<section class="wrap">
+  <h2 class="ttl">Новые книги</h2>
+  <div class="grid" id="grid"></div>
+  <p class="more"><a class="btn-o" href="shop.html">Все книги</a></p>
+</section>
+
+
+<section class="wrap deals">
+  <div class="bar-green">Скидка дня до 40% — специальное предложение</div>
+  <div class="drow" id="drow"></div>
+</section>
+
+
+<section class="bestseller-bg">
+  <div class="wrap">
+    <div class="sec-title">
+      <h2>BEST SELLER BOOKS</h2>
+    </div>
+    <div class="bestseller-wrap">
+      <div class="author-spotlight">
+        <img src="assets/image/others/best-seller-author.jpg" alt="John Parker">
+        <div class="author-overlay">
+          <div class="author-signature">John -<br>Parker</div>
+        </div>
+      </div>
+      <div class="bestseller-content">
+        <div class="bestseller-grid" id="bestseller-grid"></div>
+        <div class="dots" id="bestseller-dots">
+          <button class="dot on" data-slide="0" aria-label="Страница 1"></button>
+          <button class="dot" data-slide="1" aria-label="Страница 2"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="wrap sec-space">
+  <div class="sec-title">
+    <h2>CHILDREN’S BOOKS</h2>
+  </div>
+  <div class="children-grid" id="children-grid"></div>
+
+  <div class="promo-double">
+    <a href="shop.html" class="promo-item">
+      <img src="assets/image/bg-images/promo-banner-with-text.jpg" alt="Buy 3 Get Free 1">
+    </a>
+    <a href="shop.html" class="promo-item">
+      <img src="assets/image/bg-images/promo-banner-with-text-2.jpg" alt="Special Offer">
+    </a>
+  </div>
+</section>
+
+
+<section class="wrap sec-space">
+  <div class="sec-title">
+    <h2>ARTS & PHOTOGRAPHY BOOKS</h2>
+  </div>
+  <div class="art-grid" id="art-grid"></div>
+</section>
+
+
+<section class="teal">
+  <div class="wrap teal-in">
+    <div class="teal-text">
+      <h2>I Love This Idea!</h2>
+      <p>Cover up front of book and leave summary</p>
+      <a class="btn-y" href="shop.html">$78.09 — Learn More</a>
+    </div>
+    <div class="teal-img">
+      <img src="assets/image/bg-images/promo-banner-full.jpg" alt="I Love This Idea">
+    </div>
+  </div>
+</section>
+
+
+<section class="wrap sec-space">
+  <div class="sec-title simple">
+    <h2>LATEST BLOGS</h2>
+  </div>
+  <div class="blogs" id="blogs"></div>
+</section>
+
+
+<section class="wrap brands-section">
+  <div class="brands-row" id="brands-row"></div>
+</section>
+
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
